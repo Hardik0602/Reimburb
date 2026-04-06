@@ -3,7 +3,12 @@ import Login from './pages/Login'
 import EmployeeLayout from './layouts/EmployeeLayout'
 import ManagerLayout from './layouts/ManagerLayout'
 import AdminLayout from './layouts/AdminLayout'
-import EmployeeProfile from './pages/employee/Profile'
+import EmployeeDashboard from './pages/employee/Dashboard'
+import Approved from './pages/employee/Approved'
+import History from './pages/employee/History'
+import Pending from './pages/employee/Pending'
+import Rejected from './pages/employee/Rejected'
+import Submit from './pages/employee/Submit'
 import AdminProfile from './pages/admin/Profile'
 import ManagerProfile from './pages/manager/Profile'
 const router = createBrowserRouter(
@@ -15,8 +20,12 @@ const router = createBrowserRouter(
         element={
           <EmployeeLayout />
         }>
-        <Route index element={<EmployeeProfile />} />
-        <Route path='dummy' element={<Login />} />
+        <Route index element={<EmployeeDashboard />} />
+        <Route path='approved' element={<Approved />} />
+        <Route path='history' element={<History />} />
+        <Route path='pending' element={<Pending />} />
+        <Route path='rejected' element={<Rejected />} />
+        <Route path='submit' element={<Submit />} />
       </Route>
       <Route
         path='/admin'
