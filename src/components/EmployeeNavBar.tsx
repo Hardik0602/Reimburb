@@ -58,7 +58,7 @@ const EmployeeNavBar = () => {
                 {isActive(i.to) && (
                   <RiArrowRightLine className="ml-auto opacity-60" />
                 )}
-                {(i.badge ?? 0) > 0 && (
+                {(i.badge ?? 0) > 0 && !isActive(i.to) && (
                   <span className={`ml-auto text-[9px] font-mono font-medium px-1.5 py-0.5 rounded-full ${i.badgeStyle}`}>
                     {i.badge}
                   </span>
@@ -84,19 +84,23 @@ const EmployeeNavBar = () => {
           </Link>
         </div>
       </nav>
-      <div className="border-t border-white/6 px-4 py-3.5 flex items-center gap-2.5">
-        <div className="w-8.5 h-8.5 rounded-[9px] bg-linear-to-br from-[#3C3489] to-[#a89ef7] flex items-center justify-center text-[12px] font-bold text-white">
-          TH
+      <div className="border-t border-white/6 px-4 py-3.5 flex items-center justify-between">
+        <div className="flex gap-2.5">
+          <div className="w-8.5 h-8.5 rounded-[9px] bg-linear-to-br from-[#3C3489] to-[#a89ef7] flex items-center justify-center text-[12px] font-bold text-white">
+            TH
+          </div>
+          <div className="flex-1">
+            <p className="text-[12px] font-semibold text-white">
+              Tom Holland
+            </p>
+            <p className="text-[10px] text-white/30 mt-0.5">
+              Employee
+            </p>
+          </div>
         </div>
-        <div className="flex-1">
-          <p className="text-[12px] font-semibold text-white">
-            Tom Holland
-          </p>
-          <p className="text-[10px] text-white/30 mt-0.5">
-            Employee
-          </p>
-        </div>
-        <div className="w-1.5 h-1.5 rounded-full bg-[#a89ef7]" />
+        <button className="text-[11px] font-mono text-white/30 hover:text-white/60 transition-colors">
+          Logout
+        </button>
       </div>
     </>
   )
